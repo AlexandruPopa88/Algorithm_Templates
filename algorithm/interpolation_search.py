@@ -6,11 +6,11 @@ Input: list - sorted, uniformly distributed
 Output: index of val in list or -1
 """
 
-def InterpolationSearch(lys, val):
+def InterpolationSearch(lys: list, val) -> int:
     low = 0
     high = len(lys) - 1
 
-    while low <= high and val >= lys[low] and val <= lys[high]:
+    while low <= high and lys[low] <= val <= lys[high]:
         index = low + int(
             ((high - low) / (lys[high] - lys[low])) * (val - lys[low])
         )
